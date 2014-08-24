@@ -11,7 +11,7 @@
     <mvc:annotation-driven/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <context:component-scan base-package="com.myhandler.mvc"/>
+    <context:component-scan base-package="com.myhandler"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
@@ -21,10 +21,6 @@
     <jee:jndi-lookup expected-type="javax.sql.DataSource" id="dataSource" jndi-name="jdbc/TestDB"/>
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-
-    <bean id="dao" class="com.myhandler.dao.DaoImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 

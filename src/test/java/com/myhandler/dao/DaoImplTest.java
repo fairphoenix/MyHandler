@@ -1,8 +1,10 @@
 package com.myhandler.dao;
 
+import com.google.gson.Gson;
 import com.myhandler.dao.entities.CityEntity;
 import static org.junit.Assert.*;
 
+import com.myhandler.dao.entities.CountryEntity;
 import com.myhandler.dao.entities.TaskEntity;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -19,7 +21,7 @@ import java.util.List;
 /**
  * Created by anatoliy on 24.08.14.
  */
-@Ignore
+//@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration("file:src/main/webapp/WEB-INF/test-pools.xml")
@@ -62,5 +64,11 @@ public class DaoImplTest {
         task.setState("n");
         impl.updateTask(task);
         assertNull(impl.getFirstTaskByState("f"));
+    }
+
+    @Test
+    public void testCountryToJson(){
+        CountryEntity country = impl.getCountryByCode("RUS");
+        System.out.println(new Gson().toJson(country));
     }
 }
