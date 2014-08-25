@@ -9,7 +9,12 @@
 
     <context:annotation-config/>
     <mvc:annotation-driven/>
-    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"/>
 
     <context:component-scan base-package="com.myhandler"/>
 
@@ -19,10 +24,6 @@
     </bean>
 
     <jee:jndi-lookup expected-type="javax.sql.DataSource" id="dataSource" jndi-name="jdbc/TestDB"/>
-
-    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
 
     <bean id="jacksonMessageConverter"
           class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>

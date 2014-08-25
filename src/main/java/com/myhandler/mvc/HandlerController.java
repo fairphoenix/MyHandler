@@ -1,14 +1,14 @@
 package com.myhandler.mvc;
 
-import com.myhandler.dao.Dao;
-import com.myhandler.dao.entities.CityEntity;
+import com.myhandler.beans.Bank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by anatoliy on 23.08.14.
@@ -17,12 +17,20 @@ import java.util.List;
 @RequestMapping("/handle")
 public class HandlerController {
 
+    private static Logger logger = Logger.getLogger("com.myhandler.mvc.HandlerController");
+
     @Autowired
-    private Dao dao;
+    private Bank bank;
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public List<CityEntity> getCities(){
-        return dao.getAllCities();
+    public String randomTransfer(){
+        int toAccount = (int) (bank.size() * Math.random()) + 1;
+        int fromAccount = (int) (bank.size() * Math.random()) +1;
+        int amount = (int) (1000 * Math.random());
+        bank.transfer(fromAccount, toAccount, amount);
+        String msg = "From " + fromAccount + " to " + toAccount + " amount = " + amount +"; Total balance = " + bank.getTotalBalance();
+        logger.log(Level.INFO, msg);
+        return msg;
     }
 }

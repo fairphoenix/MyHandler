@@ -1,11 +1,11 @@
 package com.myhandler.dao;
 
 import com.google.gson.Gson;
-import com.myhandler.dao.entities.CityEntity;
+import com.myhandler.dao.entities.AccountEntity;
+
 import static org.junit.Assert.*;
 
-import com.myhandler.dao.entities.CountryEntity;
-import com.myhandler.dao.entities.TaskEntity;
+import com.myhandler.util.GlobalResource;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,38 +37,13 @@ public class DaoImplTest {
         impl.setDataSource(dataSource);
     }
 
+    @Ignore
     @Test
-    public void testGetAllCities() throws Exception {
-        List<CityEntity> allCities = impl.getAllCities();
-        assertTrue(allCities.size() > 0);
-    }
-
-    @Test
-    public void testAddTask() throws Exception {
-        TaskEntity task = new TaskEntity();
-        task.setRef("1234qwer");
-        task.setState("n");
-        task.setIdCity(123);
-        impl.addTask(task);
-    }
-
-    @Test
-    public void testGetFirstTaskByState() throws Exception {
-        TaskEntity task = impl.getFirstTaskByState("n");
-        assertNotNull(task);
-    }
-
-    @Test
-    public void testUpdateTask() throws Exception {
-        TaskEntity task = impl.getFirstTaskByState("f");
-        task.setState("n");
-        impl.updateTask(task);
-        assertNull(impl.getFirstTaskByState("f"));
-    }
-
-    @Test
-    public void testCountryToJson(){
-        CountryEntity country = impl.getCountryByCode("RUS");
-        System.out.println(new Gson().toJson(country));
+    public void fillBank(){
+        impl.truncateAccount();
+        for(int i = 0; i < GlobalResource.COUNT_ACCOUNTS; i++){
+            impl.addAccount(new AccountEntity(1000));
+        }
+        System.out.println("Total balance = " + impl.getTotalBalance());
     }
 }
