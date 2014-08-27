@@ -1,6 +1,6 @@
-package com.myhandler.dao;
+package com.myhandler.dao.bank;
 
-import com.myhandler.dao.entities.AccountEntity;
+import com.myhandler.dao.bank.entities.AccountEntity;
 
 /**
  * Created by anatoliy on 23.08.14.

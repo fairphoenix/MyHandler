@@ -1,12 +1,10 @@
-package com.myhandler.dao;
+package com.myhandler.dao.bank;
 
-import com.myhandler.dao.entities.AccountEntity;
+import com.myhandler.dao.bank.entities.AccountEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;

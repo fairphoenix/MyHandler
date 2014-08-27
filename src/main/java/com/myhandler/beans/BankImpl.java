@@ -1,10 +1,9 @@
 package com.myhandler.beans;
 
-import com.myhandler.dao.Dao;
-import com.myhandler.dao.entities.AccountEntity;
+import com.myhandler.dao.bank.Dao;
+import com.myhandler.dao.bank.entities.AccountEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 

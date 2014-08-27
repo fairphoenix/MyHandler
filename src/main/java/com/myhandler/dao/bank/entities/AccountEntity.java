@@ -1,4 +1,4 @@
-package com.myhandler.dao.entities;
+package com.myhandler.dao.bank.entities;
 
 /**
  * Created by anatoliy on 25.08.14.

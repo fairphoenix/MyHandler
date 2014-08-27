@@ -1,9 +1,7 @@
 package com.myhandler.dao;
 
-import com.google.gson.Gson;
-import com.myhandler.dao.entities.AccountEntity;
-
-import static org.junit.Assert.*;
+import com.myhandler.dao.bank.DaoImpl;
+import com.myhandler.dao.bank.entities.AccountEntity;
 
 import com.myhandler.util.GlobalResource;
 import org.junit.Ignore;
@@ -17,7 +15,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
-import java.util.List;
 
 /**
  * Created by anatoliy on 24.08.14.
