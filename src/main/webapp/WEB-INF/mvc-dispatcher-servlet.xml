@@ -23,7 +23,8 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <jee:jndi-lookup expected-type="javax.sql.DataSource" id="dataSource" jndi-name="jdbc/TestDB"/>
+    <!--<jee:jndi-lookup expected-type="javax.sql.DataSource" id="dataSource" jndi-name="jdbc/TestDB"/>-->
+    <jee:jndi-lookup id="dataSource" jndi-name="jdbc/NKK"/>
 
     <bean id="jacksonMessageConverter"
           class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>

@@ -4,6 +4,7 @@ import com.myhandler.dao.Dao;
 import com.myhandler.dao.entities.AccountEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,21 +22,34 @@ public class BankImpl implements Bank {
         this.dao = dao;
     }
 
-    @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void transfer(int from, int to, int amount) {
         if (from == to) {
             return;
         }
-        AccountEntity accountFrom = dao.getAccountById(from);
+        AccountEntity[] accounts = loadInNaturalOrder(from, to);
+        AccountEntity accountFrom = accounts[0];
         if (accountFrom.getAmount() < amount) {
             return;
         }
-        AccountEntity accountTo = dao.getAccountById(to);
+        AccountEntity accountTo = accounts[1];
         accountFrom.setAmount(accountFrom.getAmount() - amount);
         accountTo.setAmount(accountTo.getAmount() + amount);
         dao.updateAccount(accountFrom);
         dao.updateAccount(accountTo);
+    }
+
+    private AccountEntity[] loadInNaturalOrder(int from, int to) {
+        AccountEntity[] accounts = new AccountEntity[2];
+        if (from > to) {
+            accounts[1] = dao.getAccountById(to);
+            accounts[0] = dao.getAccountById(from);
+        } else {
+            accounts[0] = dao.getAccountById(from);
+            accounts[1] = dao.getAccountById(to);
+        }
+        return accounts;
     }
 
     @Override

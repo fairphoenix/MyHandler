@@ -30,7 +30,8 @@ public class HandlerController {
         int amount = (int) (1000 * Math.random());
         bank.transfer(fromAccount, toAccount, amount);
         String msg = "From " + fromAccount + " to " + toAccount + " amount = " + amount +"; Total balance = " + bank.getTotalBalance();
-        logger.log(Level.INFO, msg);
+        //logger.log(Level.INFO, msg);
+        //System.out.println(msg);
         return msg;
     }
 }

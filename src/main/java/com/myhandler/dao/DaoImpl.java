@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -24,31 +26,32 @@ public class DaoImpl extends JdbcDaoSupport implements Dao {
 
     @Override
     public AccountEntity getAccountById(int id) {
-        return getJdbcTemplate().queryForObject("select * from test.account where id = ? FOR UPDATE", new AccountMapper(), id);
+        //WITH RS USE AND KEEP UPDATE LOCKS
+        return getJdbcTemplate().queryForObject("select * from karpenko.account where id = ? WITH RS USE AND KEEP UPDATE LOCKS", new AccountMapper(), id);
     }
 
     @Override
     public void updateAccount(AccountEntity account) {
-        getJdbcTemplate().update("update test.account set amount = ? where id = ?", account.getAmount(), account.getId());
+        getJdbcTemplate().update("update karpenko.account set amount = ? where id = ?", account.getAmount(), account.getId());
     }
 
     @Override
     public double getTotalBalance() {
-        return getJdbcTemplate().queryForObject("select sum(amount) from test.account", Double.class);
+        return getJdbcTemplate().queryForObject("select sum(amount) from karpenko.account", Double.class);
     }
 
     @Override
     public int getBankSize() {
-        return getJdbcTemplate().queryForObject("select count(*) from test.account", Integer.class);
+        return getJdbcTemplate().queryForObject("select count(*) from karpenko.account", Integer.class);
     }
 
     @Override
     public void addAccount(AccountEntity account) {
-        getJdbcTemplate().update("insert into test.account (amount) value (?)", account.getAmount());
+        getJdbcTemplate().update("insert into karpenko.account (id, amount) values (?, ?)", account.getId(), account.getAmount());
     }
 
     public void truncateAccount(){
-        getJdbcTemplate().update("truncate table test.account");
+        getJdbcTemplate().update("truncate table karpenko.account IMMEDIATE");
     }
 
     private static class AccountMapper implements RowMapper<AccountEntity>{

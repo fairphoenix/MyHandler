@@ -10,6 +10,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -28,6 +29,7 @@ import java.util.List;
 public class DaoImplTest {
 
     @Autowired
+    @Qualifier("testDataSourceDB2")
     DataSource dataSource;
     DaoImpl impl;
 
@@ -42,8 +44,10 @@ public class DaoImplTest {
     public void fillBank(){
         impl.truncateAccount();
         for(int i = 0; i < GlobalResource.COUNT_ACCOUNTS; i++){
-            impl.addAccount(new AccountEntity(1000));
+            impl.addAccount(new AccountEntity(i+1, 1000));
         }
         System.out.println("Total balance = " + impl.getTotalBalance());
     }
+
+
 }

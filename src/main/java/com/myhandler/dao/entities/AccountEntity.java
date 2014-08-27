@@ -30,6 +30,11 @@ public class AccountEntity {
         this.amount = amount;
     }
 
+    public AccountEntity(int id, int amount) {
+        this.id = id;
+        this.amount = amount;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
