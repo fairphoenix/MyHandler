@@ -41,21 +41,28 @@ public class TestTransactionImplTest {
 
     @Test
     public void testUpdate() throws InterruptedException {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                testTransaction.updateRecord(new Record(1, "first"), 10);
-            }
-        }, "First").start();
+//        System.out.println("**********Start 1 " + format.format(new Date()));
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                testTransaction.addRecord(new Record(1, "first"));
+//            }
+//        }, "First").start();
+//
+//        Thread.sleep(15*1000);
+//        System.out.println("**********Start 2 " + format.format(new Date()));
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                testTransaction.addRecord(new Record(2, "second"));
+//            }
+//        }, "Second").start();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                testTransaction.updateRecord(new Record(1, "second"), 30);
-            }
-        }, "Second").start();
 
-        Thread.sleep(60*1000);
+
+
+        testTransaction.addRecord(new Record(7, "first"));
+
         List<Record> records = testTransaction.getAllRecords();
         System.out.println(records);
         System.out.println("Current time: " + format.format(new Date()));
