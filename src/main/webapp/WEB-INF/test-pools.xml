@@ -12,7 +12,7 @@
 
     <bean id="testDataSourceDB2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.ibm.db2.jcc.DB2Driver"/>
-        <property name="url" value="jdbc:db2://10.1.108.12:50000/DVD:retrieveMessagesFromServerOnGetMessage=true;"/>
+        <property name="url" value=""/>
         <property name="username" value="ded"/>
         <property name="password" value="qwerty"/>
     </bean>
