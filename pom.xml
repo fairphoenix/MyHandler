@@ -167,6 +167,12 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+
         <!--For MySql-->
         <dependency>
             <groupId>mysql</groupId>
@@ -178,6 +184,12 @@
             <groupId>com.ibm.db2</groupId>
             <artifactId>db2jcc4</artifactId>
             <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc14</artifactId>
+            <version>10.2.0.3.0</version>
         </dependency>
 
         <!--For HSql-->

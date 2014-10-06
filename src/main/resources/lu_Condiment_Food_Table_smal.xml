@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<lu_Condiment_Food_Table>
+    <lu_Condiment_Food_Row>
+        <survey_food_code>11111000</survey_food_code>
+        <display_name>Whole milk</display_name>
+        <condiment_portion_size>1/2 cup</condiment_portion_size>
+        <condiment_portion_code>10205</condiment_portion_code>
+        <condiment_grains>.00000</condiment_grains>
+        <condiment_whole_grains>.00000</condiment_whole_grains>
+        <condiment_vegetables>.00000</condiment_vegetables>
+        <condiment_dkgreen>.00000</condiment_dkgreen>
+        <condiment_orange>.00000</condiment_orange>
+        <condiment_starchy_vegetables>.00000</condiment_starchy_vegetables>
+        <condiment_other_vegetables>.00000</condiment_other_vegetables>
+        <condiment_fruits>.00000</condiment_fruits>
+        <condiment_milk>.50020</condiment_milk>
+        <condiment_meat>.00000</condiment_meat>
+        <condiment_soy>.00000</condiment_soy>
+        <condiment_drybeans_peas>.00000</condiment_drybeans_peas>
+        <condiment_oils>.00000</condiment_oils>
+        <condiment_solid_fats>34.78464</condiment_solid_fats>
+        <condiment_added_sugars>.00000</condiment_added_sugars>
+        <condiment_alcohol>.00000</condiment_alcohol>
+        <condiment_calories>73.20000</condiment_calories>
+        <condiment_saturated_fats>2.26920</condiment_saturated_fats>
+    </lu_Condiment_Food_Row>
+    <lu_Condiment_Food_Row>
+        <survey_food_code>11111000</survey_food_code>
+        <display_name>Whole milk</display_name>
+        <condiment_portion_size>2 Tablespoons</condiment_portion_size>
+        <condiment_portion_code>30000</condiment_portion_code>
+        <condiment_grains>.00000</condiment_grains>
+        <condiment_whole_grains>.00000</condiment_whole_grains>
+        <condiment_vegetables>.00000</condiment_vegetables>
+        <condiment_dkgreen>.00000</condiment_dkgreen>
+        <condiment_orange>.00000</condiment_orange>
+        <condiment_starchy_vegetables>.00000</condiment_starchy_vegetables>
+        <condiment_other_vegetables>.00000</condiment_other_vegetables>
+        <condiment_fruits>.00000</condiment_fruits>
+        <condiment_milk>.12505</condiment_milk>
+        <condiment_meat>.00000</condiment_meat>
+        <condiment_soy>.00000</condiment_soy>
+        <condiment_drybeans_peas>.00000</condiment_drybeans_peas>
+        <condiment_oils>.00000</condiment_oils>
+        <condiment_solid_fats>8.69616</condiment_solid_fats>
+        <condiment_added_sugars>.00000</condiment_added_sugars>
+        <condiment_alcohol>.00000</condiment_alcohol>
+        <condiment_calories>18.30000</condiment_calories>
+        <condiment_saturated_fats>.56730</condiment_saturated_fats>
+    </lu_Condiment_Food_Row>
+    <lu_Condiment_Food_Row>
+        <survey_food_code>11112210</survey_food_code>
+        <display_name>1% milk (low fat)</display_name>
+        <condiment_portion_size>1/2 cup</condiment_portion_size>
+        <condiment_portion_code>10205</condiment_portion_code>
+        <condiment_grains>.00000</condiment_grains>
+        <condiment_whole_grains>.00000</condiment_whole_grains>
+        <condiment_vegetables>.00000</condiment_vegetables>
+        <condiment_dkgreen>.00000</condiment_dkgreen>
+        <condiment_orange>.00000</condiment_orange>
+        <condiment_starchy_vegetables>.00000</condiment_starchy_vegetables>
+        <condiment_other_vegetables>.00000</condiment_other_vegetables>
+        <condiment_fruits>.00000</condiment_fruits>
+        <condiment_milk>.50020</condiment_milk>
+        <condiment_meat>.00000</condiment_meat>
+        <condiment_soy>.00000</condiment_soy>
+        <condiment_drybeans_peas>.00000</condiment_drybeans_peas>
+        <condiment_oils>.00000</condiment_oils>
+        <condiment_solid_fats>9.75024</condiment_solid_fats>
+        <condiment_added_sugars>.00000</condiment_added_sugars>
+        <condiment_alcohol>.00000</condiment_alcohol>
+        <condiment_calories>51.24000</condiment_calories>
+        <condiment_saturated_fats>.76860</condiment_saturated_fats>
+    </lu_Condiment_Food_Row>
+    <lu_Condiment_Food_Row>
+        <survey_food_code>11112210</survey_food_code>
+        <display_name>1% milk (low fat)</display_name>
+        <condiment_portion_size>2 Tablespoons</condiment_portion_size>
+        <condiment_portion_code>30000</condiment_portion_code>
+        <condiment_grains>.00000</condiment_grains>
+        <condiment_whole_grains>.00000</condiment_whole_grains>
+        <condiment_vegetables>.00000</condiment_vegetables>
+        <condiment_dkgreen>.00000</condiment_dkgreen>
+        <condiment_orange>.00000</condiment_orange>
+        <condiment_starchy_vegetables>.00000</condiment_starchy_vegetables>
+        <condiment_other_vegetables>.00000</condiment_other_vegetables>
+        <condiment_fruits>.00000</condiment_fruits>
+        <condiment_milk>.12505</condiment_milk>
+        <condiment_meat>.00000</condiment_meat>
+        <condiment_soy>.00000</condiment_soy>
+        <condiment_drybeans_peas>.00000</condiment_drybeans_peas>
+        <condiment_oils>.00000</condiment_oils>
+        <condiment_solid_fats>2.43756</condiment_solid_fats>
+        <condiment_added_sugars>.00000</condiment_added_sugars>
+        <condiment_alcohol>.00000</condiment_alcohol>
+        <condiment_calories>12.81000</condiment_calories>
+        <condiment_saturated_fats>.19215</condiment_saturated_fats>
+    </lu_Condiment_Food_Row>
+    <lu_Condiment_Food_Row>
+    <survey_food_code>11113000</survey_food_code>
+    <display_name>Fat free milk (skim)</display_name>
+    <condiment_portion_size>1/2 cup</condiment_portion_size>
+    <condiment_portion_code>10205</condiment_portion_code>
+    <condiment_grains>.00000</condiment_grains>
+    <condiment_whole_grains>.00000</condiment_whole_grains>
+</lu_Condiment_Food_Table>

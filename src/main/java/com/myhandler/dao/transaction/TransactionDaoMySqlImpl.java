@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -22,11 +24,13 @@ public class TransactionDaoMySqlImpl extends JdbcDaoSupport implements Transacti
     }
 
     @Override
+    @Transactional
     public void addRecord(Record record) {
         getJdbcTemplate().update("insert into test.timer (id, time, update_time) values (?, ?, now())", record.getId(), record.getTime());
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public void updateRecord(Record record) {
         getJdbcTemplate().update("update test.timer set time = ?, update_time = now() where id = ?", record.getTime(), record.getId());
     }

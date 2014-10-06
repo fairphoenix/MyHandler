@@ -30,7 +30,7 @@ public class TestTransactionImplTest {
 
     @Test
     public void testAdd(){
-        testTransaction.addRecord(new Record(1, format.format(new Date())));
+        testTransaction.addRecord(new Record(2, "qwerty"));
     }
 
     @Test
@@ -60,4 +60,10 @@ public class TestTransactionImplTest {
         System.out.println(records);
         System.out.println("Current time: " + format.format(new Date()));
     }
+
+    @Test
+    public void testInnerTx(){
+        testTransaction.addRecord(new Record(1, "first"));
+    }
+
 }
